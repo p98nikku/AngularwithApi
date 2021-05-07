@@ -1,0 +1,40 @@
+<!-- <p>asynclist works!</p>
+<!-- <p>observablelist works!</p> -->
+<br>
+<br>
+<div class="col-md-12">
+    <table class="table">
+        <thead class="tablehead">
+        <tr>
+            <th>Id</th>
+            <th>Price</th>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Expiry Date</th>
+            <th>Colour</th>
+            <th>In Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of Products$$ | async">
+            <td>{{p.id}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.title}}</td> 
+            <td>{{p.quantity}}</td> 
+            <td>{{p.expiryDate}}</td> 
+            <td>{{p.colour}}</td> 
+            <td><ng-container *ngIf="p.inStock; then done else pending">
+            </ng-container>
+            <ng-template #done>
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+            </ng-template>
+            <ng-template #pending>
+                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                
+            </ng-template></td> 
+        </tr>
+    </tbody>
+</table> 
+</div>
+ 
+

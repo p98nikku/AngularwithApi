@@ -1,0 +1,13 @@
+
+  .tablehead{
+    background-color: #e91e63;
+    
+}
+.th{
+    font-size: 12px;
+    font-weight: 500;
+}
+  table {
+    width: 100%;
+  }
+  tr:nth-child(even) {background-color: #f2f2f2;}
