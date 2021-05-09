@@ -1,0 +1,40 @@
+<mat-toolbar style="background-color: #e91e63;">
+  <mat-toolbar-row style="color: white;">
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button  [routerLink]="'Home'" > Home </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<!-- <app-home></app-home> -->
+<mat-sidenav-container autosize><mat-sidenav #sidenav mode="side">
+  <mat-nav-list>
+    <mat-list-item >
+       <mat-icon mat-list-icon>home</mat-icon>
+     
+      <span *ngIf="isExpanded" [routerLink]="'Home'">Home</span>
+    </mat-list-item>
+    <mat-list-item >
+       <mat-icon mat-list-icon>add</mat-icon>
+     
+      <span *ngIf="isExpanded" [routerLink]="'add'">Add</span>
+    </mat-list-item>
+    
+    <mat-list-item >
+       <mat-icon mat-list-icon>delete</mat-icon>
+      <span *ngIf="isExpanded" [routerLink]="'delete'">Delete</span>
+    </mat-list-item>
+    
+    <mat-list-item >
+        <mat-icon mat-list-icon>update</mat-icon>
+      <span *ngIf="isExpanded" [routerLink]="'update'">Update</span>
+    </mat-list-item>
+    
+  </mat-nav-list>
+</mat-sidenav>
+
+<router-outlet></router-outlet>
